@@ -24,7 +24,7 @@ export default function Home() {
   const [chartData, setChartData] = useState<ChartDatum[]>(INITIAL_CHART_DATA);
 
   useEffect(() => {
-    const socket: Socket = io("http://localhost:4000");
+    const socket: Socket = io("http://192.168.0.117:4000");
 
     // Vamos focar no evento "telemetry" que envia ambos os dados
     socket.on("telemetry", (data: { temperatura: number, velocidade: number }) => {
